@@ -3,8 +3,8 @@ module github.com/conduitio-labs/custom-conduit-app
 go 1.23.6
 
 require (
-	github.com/conduitio-labs/conduit-connector-snowflake v0.3.2-0.20250228120840-3f3c281d12e2
-	github.com/conduitio/conduit v0.14.0-nightly.20250228.0.20250227120548-51e5540972df
+	github.com/conduitio-labs/conduit-connector-snowflake v0.4.0
+	github.com/conduitio/conduit v0.13.2
 )
 
 require (
@@ -103,7 +103,7 @@ require (
 	github.com/conduitio/conduit-connector-postgres v0.11.0 // indirect
 	github.com/conduitio/conduit-connector-protocol v0.9.1 // indirect
 	github.com/conduitio/conduit-connector-s3 v0.9.0 // indirect
-	github.com/conduitio/conduit-connector-sdk v0.13.2-0.20250221235924-e494a3645bb7 // indirect
+	github.com/conduitio/conduit-connector-sdk v0.13.2 // indirect
 	github.com/conduitio/conduit-processor-sdk v0.4.1 // indirect
 	github.com/conduitio/conduit-schema-registry v0.2.3 // indirect
 	github.com/conduitio/ecdysis v0.4.0 // indirect
