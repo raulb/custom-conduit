@@ -8,8 +8,8 @@ pipelines:
         type: source
         plugin: builtin:postgres
         settings:
-          tables: "public.employees"
-          url: "postgresql://meroxauser:meroxapass@custom-pg-0:5432/meroxadb"
+          tables: "employees"
+          url: "postgresql://meroxauser:meroxapass@localhost:5432/meroxadb"
           cdcMode: "logrepl"
           logrepl.slotName: "conduit_slot"
           logrepl.publicationName: "conduit_pub"
@@ -25,8 +25,8 @@ pipelines:
         plugin: builtin:kafka
         name: kafka-destination
         settings:
-          servers: "custom-kafka-0:9092"
-          topic: "public.employees"
+          servers: "localhost:9092"
+          topic: "employees"
           compression: "none"
           sdk.schema.extract.key.enabled: false
           sdk.schema.extract.payload.enabled: false
