@@ -6,6 +6,17 @@
 VERSION=`git describe --tags --dirty`
 GO_VERSION_CHECK=`./scripts/check-go-version.sh`
 
+.PHONY: help
+help:
+	@echo "Usage: make [target]"
+	@echo ""
+	@echo "Targets:"
+	@echo "  build        Build the Conduit binary"
+	@echo "  docker-build Build the Conduit binary and create a Docker image"
+	@echo "  run          Run the Conduit binary"
+	@echo "  help         Show this help message"
+	@echo "  check-go-version Check Go version compatibility"
+
 # The build target should stay at the top since we want it to be the default target.
 .PHONY: build
 build: check-go-version
@@ -20,7 +31,8 @@ docker-build:
 
 .PHONY: run
 run:
-	go run main.go
+	make build
+	./conduit run --preview.pipeline-arch-v2
 
 .PHONY: check-go-version
 check-go-version:

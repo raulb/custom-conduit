@@ -1,5 +1,5 @@
 # Start with a golang base
-FROM golang:1.23-bullseye AS base
+FROM golang:1.24-bullseye AS base
 
 # Build the full app binary
 WORKDIR /app
@@ -17,4 +17,4 @@ EXPOSE 8080/tcp
 EXPOSE 8084/tcp
 WORKDIR /app
 COPY --from=base /app/conduit /app
-CMD ["/app/conduit", "run", "--log.level=debug"]
+CMD ["/app/conduit", "run", "--preview.pipeline-arch-v2", "--log.level=debug"]
